@@ -12,7 +12,7 @@ if (!Creep.prototype.__enhancementsLoaded) {
     for (let j in this.body) {
       let type = this.body[j].type;
 
-      if (type != MOVE && type != CARRY && type != TOUGH) {
+      if (type !== MOVE && type !== TOUGH) {
         return true;
       }
     }
@@ -24,7 +24,7 @@ if (!Creep.prototype.__enhancementsLoaded) {
    */
   Creep.prototype.transferAny = function (target) {
     for (let resourceType in this.carry) {
-      if (target.structureType == STRUCTURE_LINK && resourceType != RESOURCE_ENERGY) continue;
+      if (target.structureType === STRUCTURE_LINK && resourceType !== RESOURCE_ENERGY) continue;
       if (this.carry[resourceType] > 0) {
         return this.transfer(target, resourceType);
       }

@@ -45,7 +45,7 @@ RoomDefenseProcess.prototype.run = function () {
       var closestHostileHealer = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS, {
         filter: (creep) => {
           for (var i in creep.body) {
-            if (creep.body[i].type == HEAL && creep.body[i].hits > 0) {
+            if (creep.body[i].type === HEAL && creep.body[i].hits > 0) {
               return true;
             }
           }
