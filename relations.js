@@ -1,7 +1,7 @@
 'use strict';
 
 var Relations = function () {
-  this.allies = [];
+  this.allies = ['Quadrat1c', 'zzxx'];
 
   try {
     let localRelations = require('relations.local');
